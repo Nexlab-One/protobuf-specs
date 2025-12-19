@@ -372,10 +372,9 @@ type Bundle_DsseEnvelope struct {
 	// DSSE envelopes in a bundle MUST have exactly one signature.
 	// This is a limitation from the DSSE spec, as it can contain
 	// multiple signatures. There are two primary reasons:
-	//  1. It simplifies the verification logic and policy
-	//  2. The bundle (currently) can only contain a single
-	//     instance of the required verification materials
-	//
+	// 1. It simplifies the verification logic and policy
+	// 2. The bundle (currently) can only contain a single
+	//    instance of the required verification materials
 	// During verification a client MUST reject an envelope if
 	// the number of signatures is not equal to one.
 	DsseEnvelope *dsse.Envelope `protobuf:"bytes,4,opt,name=dsse_envelope,json=dsseEnvelope,proto3,oneof"`

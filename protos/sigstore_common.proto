@@ -123,9 +123,15 @@ enum PublicKeyDetails {
         // but care should still be taken for production environments.
         ML_DSA_65 = 21; // See NIST FIPS 204
         ML_DSA_87 = 22;
+        ML_DSA_44 = 23; // Dilithium5 (NIST FIPS 204)
+        FALCON_512 = 24; // FALCON-512 (NIST FIPS 201)
+        FALCON_1024 = 25; // FALCON-1024 (NIST FIPS 201)
+        SPHINCS_PLUS_128F = 26; // SPHINCS+-128f (NIST FIPS 205)
+        SPHINCS_PLUS_192F = 27; // SPHINCS+-192f (NIST FIPS 205)
+        SPHINCS_PLUS_256F = 28; // SPHINCS+-256f (NIST FIPS 205)
 
         // Reserved for future additions of public key/signature algorithm types.
-        reserved 23 to 50;
+        reserved 29 to 50;
 }
 
 // HashOutput captures a digest of a 'message' (generic octet sequence)

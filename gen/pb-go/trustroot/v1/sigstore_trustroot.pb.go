@@ -626,19 +626,18 @@ func (x *SigningConfig) GetTsaConfig() *ServiceConfiguration {
 
 // Service represents an instance of a service that is a part of Sigstore infrastructure.
 // When selecting one or multiple services from a list of services, clients MUST:
-//   - Use the API version hint to determine the service with the highest API version
-//     that the client is compatible with.
-//   - Only select services within the specified validity period and that have the
-//     newest validity start date.
-//
+// * Use the API version hint to determine the service with the highest API version
+//   that the client is compatible with.
+// * Only select services within the specified validity period and that have the
+//   newest validity start date.
 // When selecting multiple services, clients MUST:
-//   - Use the ServiceConfiguration to determine how many services MUST be selected.
-//     Clients MUST return an error if there are not enough services that meet the
-//     selection criteria.
-//   - Group services by `operator` and select at most one service from an operator.
-//     During verification, clients MUST treat valid verification metadata from the
-//     operator as valid only once towards a threshold.
-//   - Select services from only the highest supported API version.
+// * Use the ServiceConfiguration to determine how many services MUST be selected.
+//   Clients MUST return an error if there are not enough services that meet the
+//   selection criteria.
+// * Group services by `operator` and select at most one service from an operator.
+//   During verification, clients MUST treat valid verification metadata from the
+//   operator as valid only once towards a threshold.
+// * Select services from only the highest supported API version.
 type Service struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// URL of the service. MUST include scheme and authority. MAY include path.
