@@ -383,6 +383,18 @@ pub enum PublicKeyDetails {
     /// See NIST FIPS 204
     MlDsa65 = 21,
     MlDsa87 = 22,
+    /// Dilithium5 (NIST FIPS 204)
+    MlDsa44 = 23,
+    /// FALCON-512 (NIST FIPS 201)
+    Falcon512 = 24,
+    /// FALCON-1024 (NIST FIPS 201)
+    Falcon1024 = 25,
+    /// SPHINCS+-128f (NIST FIPS 205)
+    SphincsPlus128f = 26,
+    /// SPHINCS+-192f (NIST FIPS 205)
+    SphincsPlus192f = 27,
+    /// SPHINCS+-256f (NIST FIPS 205)
+    SphincsPlus256f = 28,
 }
 impl PublicKeyDetails {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -414,6 +426,12 @@ impl PublicKeyDetails {
             Self::LmotsSha256 => "LMOTS_SHA256",
             Self::MlDsa65 => "ML_DSA_65",
             Self::MlDsa87 => "ML_DSA_87",
+            Self::MlDsa44 => "ML_DSA_44",
+            Self::Falcon512 => "FALCON_512",
+            Self::Falcon1024 => "FALCON_1024",
+            Self::SphincsPlus128f => "SPHINCS_PLUS_128F",
+            Self::SphincsPlus192f => "SPHINCS_PLUS_192F",
+            Self::SphincsPlus256f => "SPHINCS_PLUS_256F",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -442,6 +460,12 @@ impl PublicKeyDetails {
             "LMOTS_SHA256" => Some(Self::LmotsSha256),
             "ML_DSA_65" => Some(Self::MlDsa65),
             "ML_DSA_87" => Some(Self::MlDsa87),
+            "ML_DSA_44" => Some(Self::MlDsa44),
+            "FALCON_512" => Some(Self::Falcon512),
+            "FALCON_1024" => Some(Self::Falcon1024),
+            "SPHINCS_PLUS_128F" => Some(Self::SphincsPlus128f),
+            "SPHINCS_PLUS_192F" => Some(Self::SphincsPlus192f),
+            "SPHINCS_PLUS_256F" => Some(Self::SphincsPlus256f),
             _ => None,
         }
     }
